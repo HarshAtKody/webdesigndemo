@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:webdesigndemo/utils/widgets/common_device_configuration.dart';
 
 class LoginScreenDesktop extends StatelessWidget {
   const LoginScreenDesktop({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    webDeviceConfiguration(context);
     return Scaffold(
       body: bodyWidget(context),
     );

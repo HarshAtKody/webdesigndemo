@@ -1,10 +1,99 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:webdesigndemo/utils/theme_const.dart';
+import 'package:webdesigndemo/utils/widgets/common_button.dart';
+import 'package:webdesigndemo/utils/widgets/common_device_configuration.dart';
 
-class HomeScreenDesktop extends StatelessWidget {
+class HomeScreenDesktop extends StatefulWidget {
   const HomeScreenDesktop({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreenDesktop> createState() => _HomeScreenDesktopState();
+}
+
+class _HomeScreenDesktopState extends State<HomeScreenDesktop> with Constant{
+
+  List<String> navList = ["Contacts","Reservations","Home"];
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    webDeviceConfiguration(context);
+    return Scaffold(
+      backgroundColor: const Color(0xfff3f0f0),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Row(
+          children: [
+            Image.asset("assets/images/helmat.png",height: 40,width: 40,),
+            const Text("VespaJoy",style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,color: Colors.black),)
+          ],),
+        actions: const[
+          Icon(Icons.perm_identity,color: Colors.black,),
+          SizedBox(width: 10,),
+          Icon(Icons.notifications_none,color: Colors.black,),
+          SizedBox(width: 10,),
+        ],
+      ),
+
+      body: bodyWidget(),
+    );
+  }
+
+  Widget bodyWidget(){
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                color: Colors.amberAccent.withOpacity(0.8),
+                height: 100,
+                width: double.infinity,
+                child: const Center(
+                  child: Text("Vespa Joy",style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 22)
+                  ),
+                ),
+              ),
+              Container(
+                height: 200,
+                padding: const EdgeInsets.all(16),
+                child: ListView.separated(
+                  itemCount: navList.length,
+                  itemBuilder:  (context,index) {
+                    return Row(
+                      children: [
+                        Text(navList[index],style: const TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w400),),
+                        const Spacer(),
+                        const Icon(Icons.arrow_forward_ios),
+                      ],
+                    );
+                  },separatorBuilder: (context,index){
+                  return const SizedBox(height: 10,);
+                },),
+              )
+            ],
+          ),
+          Center(child: Image.asset("assets/images/scooter.png",height: 300.h,width: 300.h,)),
+          SizedBox(height: 20.h,),
+          const Text("Ride in style",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
+          SizedBox(height: 20.h,),
+          const Text("Rent a Vespa at any VespaJoy location across Canada and enjoy unlimited kilometres!",
+            style: TextStyle(fontSize: 22,fontWeight: FontWeight.w400),),
+          SizedBox(height: 20.h,),
+          CommonButton(
+              height: 60.h,
+              width: 150.w,
+              borderRadius: 30.r,
+              padding: 30.sp,
+              isGradient: false,
+              borderColor: clrTransparent,
+              label: "Rent A Vespa Now",
+
+              onTap: (){}),
+        ],
+      ),
+    );
   }
 }

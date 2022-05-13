@@ -17,10 +17,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ScreenTypeLayout(
-        mobile: const HomeScreenMobile(),
-        tablet: const HomeScreenTablet(),
-        desktop: const HomeScreenDesktop(),
+      body: ScreenTypeLayout.builder(
+        mobile: (context)=> const HomeScreenMobile(),
+        tablet: (context)=> const HomeScreenTablet(),
+        desktop:(context)=> const HomeScreenDesktop(),
       ),
     );
   }

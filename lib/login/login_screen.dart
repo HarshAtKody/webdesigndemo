@@ -17,10 +17,10 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-        body: ScreenTypeLayout(
-          mobile: const LoginScreenMobile(),
-          tablet: const LoginScreenTablet(),
-          desktop: const LoginScreenDesktop(),
+        body: ScreenTypeLayout.builder(
+          mobile: (context)=> const LoginScreenMobile(),
+          tablet: (context)=> const LoginScreenTablet(),
+          desktop:(context)=> const LoginScreenDesktop(),
         ),
       );
 

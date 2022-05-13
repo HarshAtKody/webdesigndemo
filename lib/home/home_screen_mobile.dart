@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webdesigndemo/utils/theme_const.dart';
 import 'package:webdesigndemo/utils/widgets/common_button.dart';
+import 'package:webdesigndemo/utils/widgets/common_device_configuration.dart';
 
 class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({Key? key}) : super(key: key);
@@ -16,6 +17,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> with Constant{
 
   @override
   Widget build(BuildContext context) {
+    mobileDeviceConfiguration(context);
     return Scaffold(
       backgroundColor: const Color(0xfff3f0f0),
       appBar: AppBar(

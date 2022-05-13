@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:webdesigndemo/utils/widgets/common_device_configuration.dart';
 
 class DashboardTabletScreen extends StatelessWidget {
   const DashboardTabletScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    tabletDeviceConfiguration(context);
     return SingleChildScrollView(
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 80,vertical: 40),

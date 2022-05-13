@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:webdesigndemo/utils/widgets/common_device_configuration.dart';
 
 class LoginScreenTablet extends StatelessWidget {
   const LoginScreenTablet({Key? key}) : super(key: key);
@@ -6,6 +7,7 @@ class LoginScreenTablet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    tabletDeviceConfiguration(context);
     return Scaffold(
       backgroundColor: const Color(0xffE8F9FD),
       appBar: AppBar(

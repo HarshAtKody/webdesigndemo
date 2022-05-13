@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:webdesigndemo/utils/widgets/common_device_configuration.dart';
 
 class DashboardMobileScreen extends StatelessWidget {
   const DashboardMobileScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    mobileDeviceConfiguration(context);
     return Scaffold(
       backgroundColor: const Color(0xffE8F9FD),
       appBar: AppBar(

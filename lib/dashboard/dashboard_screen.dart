@@ -19,10 +19,10 @@ import 'package:webdesigndemo/dashboard/dashboard_tablet_screen.dart';
 
       return Scaffold(
         backgroundColor: const Color(0xffE8F9FD),
-        body: ScreenTypeLayout(
-          mobile: const DashboardMobileScreen(),
-          tablet: const DashboardTabletScreen(),
-          desktop: const DashboardDesktopScreen(),
+        body: ScreenTypeLayout.builder(
+          mobile: (context)=> const DashboardMobileScreen(),
+          tablet: (context)=> const DashboardTabletScreen(),
+          desktop:(context)=> const DashboardDesktopScreen(),
         ),
       );
     }
