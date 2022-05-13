@@ -6,6 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:webdesigndemo/utils/textstyles/textstyles.dart';
+import 'package:webdesigndemo/utils/theme_const.dart';
+import 'package:webdesigndemo/utils/widgets/common_app_bar.dart';
+import 'package:webdesigndemo/utils/widgets/common_device_configuration.dart';
 
 class TimerScreen extends StatefulWidget {
   const TimerScreen({Key? key}) : super(key: key);
@@ -14,7 +17,7 @@ class TimerScreen extends StatefulWidget {
   State<TimerScreen> createState() => _TimerScreenState();
 }
 
-class _TimerScreenState extends State<TimerScreen> {
+class _TimerScreenState extends State<TimerScreen> with Constant{
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   int counterSeconds = 100;
@@ -86,7 +89,15 @@ class _TimerScreenState extends State<TimerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    mobileDeviceConfiguration(context);
     return Scaffold(
+      appBar: CommonAppBar(
+        appBar: AppBar(),
+        bgColor: clrPurpleContainer,
+        titleColor: clrWhite,
+        isBackIconWhite: true,
+        title: "BackGround Activity Screen",
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.sp),
         child: Column(

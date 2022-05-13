@@ -57,12 +57,16 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> with Constant{
                   child: ListView.separated(
                     itemCount: navList.length,
                       itemBuilder:  (context,index) {
-                    return Row(
-                      children: [
-                        Text(navList[index],style: const TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w400),),
-                        const Spacer(),
-                        const Icon(Icons.arrow_forward_ios),
-                      ],
+                    return InkWell(
+                      onTap: (){
+                      },
+                      child: Row(
+                        children: [
+                          Text(navList[index],style: const TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.w400),),
+                          const Spacer(),
+                          const Icon(Icons.arrow_forward_ios),
+                        ],
+                      ),
                     );
                   },separatorBuilder: (context,index){
                       return const SizedBox(height: 10,);
@@ -91,15 +95,15 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> with Constant{
             style: TextStyle(fontSize: 22,fontWeight: FontWeight.w400),),
           SizedBox(height: 20.h,),
           CommonButton(
-              height: 60.h,
-              width: 150.w,
               borderRadius: 30.r,
-              padding: 30.sp,
+              padding: 20.sp,
               isGradient: false,
               borderColor: clrTransparent,
               label: "Rent A Vespa Now",
+              onTap: (){
+                Navigator.pushNamed(context,'/backgroundWorkingDemo');
+              }),
 
-              onTap: (){}),
         ],
       ),
     );

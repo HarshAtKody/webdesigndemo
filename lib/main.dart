@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:webdesigndemo/dashboard/dashboard_screen.dart';
+import 'package:webdesigndemo/home/home_screen.dart';
+import 'package:webdesigndemo/login/login_screen.dart';
 import 'package:webdesigndemo/timer_screen.dart';
 
 
@@ -26,13 +29,14 @@ class MyApp extends StatelessWidget {
             textTheme: Theme.of(context).textTheme.apply(fontFamily: 'Open Sans'),
           ),
 
-          // initialRoute: '/',
-          // routes: {
-          //   '/': (context) => const DashboardScreen(title: 'Flutter Web Demo'),
-          //   '/login': (context) => const LoginScreen(),
-          //   '/home': (context) => HomeScreen(),
-          // },
-          home: const TimerScreen(),
+          initialRoute: '/',
+          routes: {
+            '/': (context) => const DashboardScreen(title: 'Flutter Web Demo'),
+            '/login': (context) => const LoginScreen(),
+            '/home': (context) => HomeScreen(),
+            '/backgroundWorkingDemo': (context) => const TimerScreen(),
+          },
+          // home: const TimerScreen(),
         );
       }
     );

@@ -22,6 +22,7 @@ class LoginScreenMobile extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           children: [
+            const SizedBox(height: 60,),
             ClipRRect(borderRadius: BorderRadius.circular(25),child: Image.asset("assets/images/dash.png",height: 150,width: 250  ,fit: BoxFit.cover,)),
 
             const SizedBox(height: 20,),
