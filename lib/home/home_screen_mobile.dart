@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:webdesigndemo/utils/theme_const.dart';
+import 'package:webdesigndemo/utils/widgets/common_button.dart';
 
 class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({Key? key}) : super(key: key);
@@ -7,14 +10,14 @@ class HomeScreenMobile extends StatefulWidget {
   State<HomeScreenMobile> createState() => _HomeScreenMobileState();
 }
 
-class _HomeScreenMobileState extends State<HomeScreenMobile> {
+class _HomeScreenMobileState extends State<HomeScreenMobile> with Constant{
   List<String> navList = ["Contacts","Reservations","Home"];
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffE5E5E5),
+      backgroundColor: const Color(0xfff3f0f0),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -33,8 +36,6 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
           SizedBox(width: 10,),
         ],
       ),
-
-
 
       drawer: Drawer(
         child: Column(
@@ -65,9 +66,39 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
                       return const SizedBox(height: 10,);
                   },),
                 )
-
           ],
         ),
+      ),
+      body: bodyWidget(),
+    );
+  }
+
+
+
+  Widget bodyWidget(){
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(child: Image.asset("assets/images/scooter.png",height: 300.h,width: 300.h,)),
+          SizedBox(height: 20.h,),
+          const Text("Ride in style",style: TextStyle(fontSize: 26,fontWeight: FontWeight.bold),),
+          SizedBox(height: 20.h,),
+          const Text("Rent a Vespa at any VespaJoy location across Canada and enjoy unlimited kilometres!",
+            style: TextStyle(fontSize: 22,fontWeight: FontWeight.w400),),
+          SizedBox(height: 20.h,),
+          CommonButton(
+              height: 60.h,
+              width: 150.w,
+              borderRadius: 30.r,
+              padding: 30.sp,
+              isGradient: false,
+              borderColor: clrTransparent,
+              label: "Rent A Vespa Now",
+
+              onTap: (){}),
+        ],
       ),
     );
   }
