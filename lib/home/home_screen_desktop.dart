@@ -91,7 +91,9 @@ class _HomeScreenDesktopState extends State<HomeScreenDesktop> with Constant{
               borderColor: clrTransparent,
               label: "Rent A Vespa Now",
 
-              onTap: (){}),
+              onTap: (){
+
+              }),
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:webdesigndemo/dashboard/dashboard_screen.dart';
+import 'package:webdesigndemo/drop_down_two_demo.dart';
 import 'package:webdesigndemo/home/home_screen.dart';
 import 'package:webdesigndemo/login/login_screen.dart';
 import 'package:webdesigndemo/timer_screen.dart';
@@ -35,6 +36,8 @@ class MyApp extends StatelessWidget {
             '/login': (context) => const LoginScreen(),
             '/home': (context) => HomeScreen(),
             '/backgroundWorkingDemo': (context) => const TimerScreen(),
+            'dropDownScreen': (context)=> const DropDownButton2Demo(
+            )
           },
           // home: const TimerScreen(),
         );
